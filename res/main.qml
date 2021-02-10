@@ -13,6 +13,8 @@ ApplicationWindow {
   RowLayout {
     anchors.fill: parent
 
+    spacing: 0
+
     LeftPanel {
       id: leftPanel
       Layout.preferredWidth: parent.width / 4.5
@@ -31,6 +33,7 @@ ApplicationWindow {
 
           Label {
             id: statusLabel
+            text: qsTr("Status Text")
           }
 
           TimeWidget {
