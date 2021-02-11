@@ -7,6 +7,7 @@ Label {
 
   property date time
   text: Qt.formatTime(time, "hh:mm AP")
+  font.pixelSize: 50
 
   Timer {
 

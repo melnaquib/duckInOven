@@ -14,11 +14,9 @@ Button {
 
   property string iconDir
 
-  on_IconStateChanged: {
-    console.log(_iconState);
-  }
-
 //  icon.source: iconDir + "/" + _iconState + " State.png"
+//  icon.width: button.width / 2
+//  icon.height: button.width / 2
 
   Layout.fillHeight: true
   Layout.fillWidth: true
@@ -34,6 +32,4 @@ Button {
     anchors.centerIn: button
   }
 
-//  icon.width: button.width / 2
-//  icon.height: button.width / 2
 }

@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
+import QtQuick.Controls.Material 2.3
 
 
 ApplicationWindow {
@@ -20,14 +21,20 @@ ApplicationWindow {
       Layout.preferredWidth: parent.width / 4.5
       Layout.fillHeight: true
     }
+
     Page {
       id: mainScreen
 
       Layout.fillWidth: true
       Layout.fillHeight: true
 
-      header: Frame {
+      Material.background: "#2f2f2f"
+
+      header: ToolBar {
         height: mainScreen.height / 5.5
+
+        padding: height/8
+
         RowLayout {
           anchors.fill: parent
 
@@ -43,12 +50,14 @@ ApplicationWindow {
         }
       }
 
-      footer: Frame {
+      footer: ToolBar {
         height: mainScreen.height / 5.5
       }
 
       SwipeView {
         id: swipeView
+        anchors.fill: parent
+        clip: true
 
         DefaultScreen {
           id: defaultScreen
