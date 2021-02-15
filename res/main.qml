@@ -76,6 +76,9 @@ ApplicationWindow {
         }
         Running {
           id: running
+
+          timer: "01:23"
+          tempr: "425F"
         }
         CameraPreview {
           id: cameraPreview
