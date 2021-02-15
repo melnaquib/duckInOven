@@ -91,21 +91,33 @@ Slider {
 
   }
 
-  handle: Shape {
-    id: handle
-    width: stepWidth * 1.5
-    height: stepWidth
-//    anchors.verticalCenter: parent.top
-//    anchors.verticalCenter: tickTrack.top
-    y: tickTrack.y - height / 3
-    anchors.horizontalCenter: parent.left
-    anchors.horizontalCenterOffset: (slider.value - from) *
-                                    slider.availableWidth / slider.interval
-    ShapePath {
-      strokeColor: "orange"
-      fillColor: "orange"
-      PathLine { x: handle.width / 2; y: handle.height }
-      PathLine { x: handle.width }
-    }
+//  handle: Shape {
+//    id: handle
+//    width: stepWidth * 1.5
+//    height: stepWidth
+////    anchors.verticalCenter: parent.top
+////    anchors.verticalCenter: tickTrack.top
+//    y: tickTrack.y - height / 3
+//    anchors.horizontalCenter: parent.left
+//    anchors.horizontalCenterOffset: (slider.value - from) *
+//                                    slider.availableWidth / slider.interval
+//    ShapePath {
+//      strokeColor: "orange"
+//      fillColor: "orange"
+//      PathLine { x: handle.width / 2; y: handle.height }
+//      PathLine { x: handle.width }
+//    }
+//  }
+
+  handle: Rectangle {
+    color: "#71e51a"
+    width: stepWidth * 1
+    radius: width / 4
+    y: tickTrack.y - tickTrack.height / 10
+    height: tickTrack.height * 1.2
+        anchors.horizontalCenter: parent.left
+        anchors.horizontalCenterOffset: (slider.value - from) *
+          slider.availableWidth / slider.interval
+
   }
 }

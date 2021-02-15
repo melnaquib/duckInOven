@@ -76,6 +76,7 @@ ApplicationWindow {
         }
         Running {
           id: running
+          visible: false
 
           timer: "01:23"
           tempr: "425F"

@@ -11,7 +11,8 @@ SOURCES += \
 
 INCLUDEPATH += src
 
-RESOURCES += res/qtquickcontrols2conf.qrc
+RESOURCES += res/qtquickcontrols2conf.qrc \
+    res/test.qrc
 #RESOURCES += res/qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
