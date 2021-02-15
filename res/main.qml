@@ -31,7 +31,7 @@ ApplicationWindow {
       Material.background: "#2f2f2f"
 
       header: ToolBar {
-        height: mainScreen.height / 5.5
+        height: 100
 
         padding: height/8
 
@@ -51,28 +51,28 @@ ApplicationWindow {
       }
 
       footer: ToolBar {
-        height: mainScreen.height / 5.5
+        height: 100
       }
 
-      SwipeView {
+      StackView {
         id: swipeView
         anchors.fill: parent
         clip: true
+
+        initialItem: manualSetting
 
         DefaultScreen {
           id: defaultScreen
         }
         CookBook {
           id: cookBook
+          anchors.fill: parent
         }
         ManualBake {
           id: manualBake
         }
-        ManualTemperature {
-          id: manualTemperature
-        }
-        ManualTimer {
-          id: manualTimer
+        ManualSetting {
+          id: manualSetting
         }
         Running {
           id: running

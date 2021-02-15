@@ -3,15 +3,17 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 
 
-ColumnLayout {
+Page {
+  ColumnLayout {
 
-  TimeWidget {
-    Layout.fillHeight: true
-    Layout.alignment: Qt.AlignHCenter
-    font.pixelSize: 150
-  }
-  DateWidget {
-    Layout.fillHeight: true
-    Layout.alignment: Qt.AlignHCenter
+    TimeWidget {
+      Layout.fillHeight: true
+      Layout.alignment: Qt.AlignHCenter
+      font.pixelSize: 150
+    }
+    DateWidget {
+      Layout.fillHeight: true
+      Layout.alignment: Qt.AlignHCenter
+    }
   }
 }
