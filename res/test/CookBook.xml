@@ -1,5 +1,5 @@
 <CookBook>
-<Recipe name="Duck" tempr="425" time="01:30">Put Duck in Oven for an hour and thirty minutes</Recipe>
-<Recipe name="Chicken" tempr="425" time="01">Put Chicken in Oven for an hour</Recipe>
-<Recipe name="Meat" tempr="425" time="02:00">Put Meat in Oven for two hours</Recipe>
+<Recipe name="Duck" tmpr="425" time="0130">Put Duck in Oven for an hour and thirty minutes</Recipe>
+<Recipe name="Chicken" tmpr="400" time="0100">Put Chicken in Oven for an hour</Recipe>
+<Recipe name="Meat" tmpr="450" time="0200">Put Meat in Oven for two hours</Recipe>
 </CookBook>

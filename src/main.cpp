@@ -1,5 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include "config.h"
+#include "hw/mock/mockheater.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,6 +15,12 @@ int main(int argc, char *argv[])
   QGuiApplication app(argc, argv);
 
   QQmlApplicationEngine engine;
+
+  engine.rootContext()->setContextProperty("cfg_MOCK_TIME_FACTOR", CFG_MOCK_TIME_FACTOR);
+
+  auto heater = new MockHeater(&app);
+  engine.rootContext()->setContextProperty("heater", heater);
+
 //  const QUrl url(QStringLiteral("qrc:/main.qml"));
   const QUrl url(QStringLiteral("../duckInOven/res/main.qml"));
   QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

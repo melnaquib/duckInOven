@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 
 Page {
   ColumnLayout {
+    anchors.fill: parent
 
     TimeWidget {
       Layout.fillHeight: true

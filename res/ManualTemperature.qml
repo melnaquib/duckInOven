@@ -4,10 +4,12 @@ import QtQuick.Controls.Material 2.3
 
 Page {
 
+  property alias tmpr: tmprSlider.value
+
   Material.background: "#2f2f2f"
 
   TickSlider {
-    id: temprSlider
+    id: tmprSlider
     anchors.centerIn: parent
     anchors.fill: parent
 

@@ -20,6 +20,36 @@ ApplicationWindow {
       id: leftPanel
       Layout.preferredWidth: parent.width / 4.5
       Layout.fillHeight: true
+
+      onClicked: {
+//        const leftPanelScreens = {
+//          LeftPanel.BUTTON.CookBook: cookBook,
+//          LeftPanel.BUTTON.Oven: manualSetting
+//        }
+        var leftPanelScreens = {};
+        leftPanelScreens[leftPanel.btn_CookBook] = cookBook;
+        leftPanelScreens[leftPanel.btn_Oven] = manualSetting;
+
+        if(btn in leftPanelScreens) {
+          swipeView.currentIndex = leftPanelScreens[btn].SwipeView.index;
+        } else if(btn == leftPanel.btn_Power) {
+//          manualSetting.time = "0001";
+          swipeView.currentIndex = manualSetting.SwipeView.index;
+        }
+      }
+
+      heaterReady: [manualSetting, running].includes(swipeView.currentItem)
+      onPowerToggled: {
+        if(on) {
+          heater.target = manualSetting.tmpr;
+          running.time = manualSetting.timeDuration;
+          swipeView.currentIndex = running.SwipeView.index;
+
+        } else {
+          swipeView.currentIndex = manualSetting.SwipeView.index;
+        }
+        heater.running = on;
+      }
     }
 
     Page {
@@ -54,35 +84,30 @@ ApplicationWindow {
         height: 100
       }
 
-      StackView {
+      SwipeView {
         id: swipeView
         anchors.fill: parent
         clip: true
 
-        initialItem: manualSetting
+        currentIndex: defaultScreen.SwipeView.index
 
         DefaultScreen {
           id: defaultScreen
         }
         CookBook {
           id: cookBook
-          anchors.fill: parent
-        }
-        ManualBake {
-          id: manualBake
+          onRecipeSelected: {
+            manualSetting.time = time;
+            manualSetting.tmpr = tmpr;
+            swipeView.currentIndex = manualSetting.SwipeView.index;
+          }
         }
         ManualSetting {
           id: manualSetting
         }
         Running {
           id: running
-          visible: false
-
-          timer: "01:23"
-          tempr: "425F"
-        }
-        CameraPreview {
-          id: cameraPreview
+          tmpr: heater.tmpr
         }
       }
     }
@@ -91,6 +116,8 @@ ApplicationWindow {
       id: rightPanel
       Layout.preferredWidth: parent.width / 4.5
       Layout.fillHeight: true
+
+      onLightSwitched: running.light = on;
     }
 
   }

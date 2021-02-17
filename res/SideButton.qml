@@ -25,7 +25,7 @@ Button {
 
   background: Image {
     id: name
-    source: iconDir + "/" + button._iconState + " State.png"
+    source: iconDir ? (iconDir + "/" + button._iconState + " State.png") : ""
     fillMode: Image.PreserveAspectFit
     width: button.width / 2
     height: width

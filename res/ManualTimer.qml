@@ -8,7 +8,8 @@ Page {
   Material.background: "#2f2f2f"
 
   property string typed: "0000"
-  property int duration: parseInt(typed.slice(0, 2)) * 60 + parseInt(typed.slice(-2))
+  readonly property int duration: 60 *( parseInt(typed.slice(-2)) +
+                                       parseInt(typed.slice(0, 2)) * 60 )
 
   function pushDigit(digit) {
     typed = typed.slice (1, 4) + digit;

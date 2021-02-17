@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>test/CookBook.xml</file>
+        <file>test/MockCamera.qml</file>
     </qresource>
 </RCC>

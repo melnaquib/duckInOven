@@ -5,6 +5,10 @@ import QtQuick.Controls.Material 2.3
 
 Page {
 
+  property alias tmpr: manualTemperature.tmpr
+  property alias time: manualTimer.typed
+  property alias timeDuration: manualTimer.duration
+
   Material.foreground: "#71e51a"
   Material.accent: "#71e51a"
 
@@ -41,8 +45,8 @@ Page {
 
     currentIndex: tabBar.currentIndex
 
-    ManualTemperature {}
-    ManualTimer {}
+    ManualTemperature { id: manualTemperature }
+    ManualTimer { id: manualTimer }
 
   }
 }

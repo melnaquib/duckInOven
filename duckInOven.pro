@@ -7,6 +7,8 @@ CONFIG += c++11
 DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x051200    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        src/hw/mock/mockcamera.cpp \
+        src/hw/mock/mockheater.cpp \
         src/main.cpp
 
 INCLUDEPATH += src
@@ -25,3 +27,8 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    src/config.h \
+    src/hw/mock/mockcamera.h \
+    src/hw/mock/mockheater.h
