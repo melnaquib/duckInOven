@@ -33,7 +33,7 @@ ApplicationWindow {
         if(btn in leftPanelScreens) {
           swipeView.currentIndex = leftPanelScreens[btn].SwipeView.index;
         } else if(btn == leftPanel.btn_Power) {
-//          manualSetting.time = "0001";
+          manualSetting.time = "0001";
           swipeView.currentIndex = manualSetting.SwipeView.index;
         }
       }

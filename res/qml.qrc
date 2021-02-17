@@ -1,5 +1,20 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>CameraPreview.qml</file>
+        <file>CookBook.qml</file>
+        <file>DateWidget.qml</file>
+        <file>DefaultScreen.qml</file>
+        <file>LeftPanel.qml</file>
+        <file>ManualBake.qml</file>
+        <file>ManualSetting.qml</file>
+        <file>ManualTemperature.qml</file>
+        <file>ManualTimer.qml</file>
+        <file>RightPanel.qml</file>
+        <file>Running.qml</file>
+        <file>SideButton.qml</file>
+        <file>Ticks.qml</file>
+        <file>TickSlider.qml</file>
+        <file>TimeWidget.qml</file>
     </qresource>
 </RCC>

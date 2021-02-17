@@ -21,8 +21,8 @@ int main(int argc, char *argv[])
   auto heater = new MockHeater(&app);
   engine.rootContext()->setContextProperty("heater", heater);
 
-//  const QUrl url(QStringLiteral("qrc:/main.qml"));
-  const QUrl url(QStringLiteral("../duckInOven/res/main.qml"));
+  const QUrl url(QStringLiteral("qrc:/main.qml"));
+//  const QUrl url(QStringLiteral("../duckInOven/res/main.qml"));
   QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                    &app, [url](QObject *obj, const QUrl &objUrl) {
     if (!obj && url == objUrl)

@@ -17,8 +17,8 @@ Page {
 //  }
   Component.onCompleted: {
     done.connect( function () {
-      heater.running = false;
       runningSwipeView.currentIndex = 1;
+      heater.running = false;
     });
   }
 

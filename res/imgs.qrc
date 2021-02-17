@@ -1,0 +1,68 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imgs/CameraPreview.png</file>
+        <file>imgs/type-H1-mainTime.png</file>
+        <file>imgs/TopBar.png</file>
+        <file>imgs/TabMenu.png</file>
+        <file>imgs/BottomMenu.png</file>
+        <file>imgs/CameraPreviewFakeLight.png</file>
+        <file>imgs/TimeNumPad.png</file>
+        <file>imgs/temp.svg</file>
+        <file>imgs/time.svg</file>
+        <file>imgs/OvenInfoSlider.png</file>
+        <file>imgs/TimeInfo.png</file>
+        <file>imgs/TemperatureSelector.png</file>
+        <file>imgs/icon-tempSelector.png</file>
+        <file>imgs/background.png</file>
+        <file>imgs/Button/Bluetooth/Default State.png</file>
+        <file>imgs/Button/Bluetooth/Disabled State.png</file>
+        <file>imgs/Button/Bluetooth/Pressed State.png</file>
+        <file>imgs/Button/Bluetooth/Triggered State.png</file>
+        <file>imgs/Button/Camera/Default State.png</file>
+        <file>imgs/Button/Camera/Pressed State.png</file>
+        <file>imgs/Button/Camera/Triggered State.png</file>
+        <file>imgs/Button/LargeTick/Default State.png</file>
+        <file>imgs/Button/LargeTick/Pressed State.png</file>
+        <file>imgs/Button/Light/Default State.png</file>
+        <file>imgs/Button/Light/Disabled State.png</file>
+        <file>imgs/Button/Light/Pressed State.png</file>
+        <file>imgs/Button/Light/Triggered State.png</file>
+        <file>imgs/Button/Method/Default State.png</file>
+        <file>imgs/Button/Method/Pressed State.png</file>
+        <file>imgs/Button/Nav/CookBook/Default State.png</file>
+        <file>imgs/Button/Nav/CookBook/Disabled State.png</file>
+        <file>imgs/Button/Nav/CookBook/Pressed State.png</file>
+        <file>imgs/Button/Nav/More/Default State.png</file>
+        <file>imgs/Button/Nav/More/Disabled State.png</file>
+        <file>imgs/Button/Nav/More/Pressed State.png</file>
+        <file>imgs/Button/Nav/Oven/Default State.png</file>
+        <file>imgs/Button/Nav/Oven/Disabled State.png</file>
+        <file>imgs/Button/Nav/Oven/Pressed State.png</file>
+        <file>imgs/Button/Nav/Settings/Default State.png</file>
+        <file>imgs/Button/Nav/Settings/Disabled State.png</file>
+        <file>imgs/Button/Nav/Settings/Pressed State.png</file>
+        <file>imgs/Button/Nav/Timer/Default State.png</file>
+        <file>imgs/Button/Nav/Timer/Disabled State.png</file>
+        <file>imgs/Button/Nav/Timer/Pressed State.png</file>
+        <file>imgs/Button/NumPad/Default State.png</file>
+        <file>imgs/Button/NumPad/Pressed State.png</file>
+        <file>imgs/Button/Pill/Next/Default State.png</file>
+        <file>imgs/Button/Pill/Next/Disabled State.png</file>
+        <file>imgs/Button/Pill/Next/Pressed State.png</file>
+        <file>imgs/Button/Power/Default State.png</file>
+        <file>imgs/Button/Power/Pressed State.png</file>
+        <file>imgs/Button/Power/Triggered State.png</file>
+        <file>imgs/Button/Recipe/Default State.png</file>
+        <file>imgs/Button/Recipe/Pressed State.png</file>
+        <file>imgs/Button/SmallTick/Default State.png</file>
+        <file>imgs/Button/SmallTick/Pressed State.png</file>
+        <file>imgs/Button/Tab/Active State.png</file>
+        <file>imgs/Button/Tab/Default State.png</file>
+        <file>imgs/Button/Tab/Pressed State.png</file>
+        <file>imgs/Button/WiFi/Default State.png</file>
+        <file>imgs/Button/WiFi/Disabled State.png</file>
+        <file>imgs/Button/WiFi/Pressed State.png</file>
+        <file>imgs/Button/WiFi/Triggered State.png</file>
+        <file>imgs/Button/BackArrow.png</file>
+    </qresource>
+</RCC>
