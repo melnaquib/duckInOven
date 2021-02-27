@@ -4,7 +4,7 @@ import QtGraphicalEffects 1.0
 
 Pane {
 
-  property bool light: false
+  property bool light: oven.lamp
 
   Image {
     id: img

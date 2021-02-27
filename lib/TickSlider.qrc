@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>TickSlider/qmldir</file>
+        <file>TickSlider/Ticks.qml</file>
+        <file>TickSlider/TickSlider.qml</file>
+    </qresource>
+</RCC>

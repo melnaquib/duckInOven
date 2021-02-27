@@ -13,8 +13,6 @@
         <file>RightPanel.qml</file>
         <file>Running.qml</file>
         <file>SideButton.qml</file>
-        <file>Ticks.qml</file>
-        <file>TickSlider.qml</file>
         <file>TimeWidget.qml</file>
     </qresource>
 </RCC>

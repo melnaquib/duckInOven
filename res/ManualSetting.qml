@@ -9,6 +9,18 @@ Page {
   property alias time: manualTimer.typed
   property alias timeDuration: manualTimer.duration
 
+  Binding {
+    target: heater
+    property: "target"
+    value: tmpr
+  }
+
+  Binding {
+    target: oven
+    property: "duration"
+    value: timeDuration * 1000
+  }
+
   Material.foreground: "#71e51a"
   Material.accent: "#71e51a"
 

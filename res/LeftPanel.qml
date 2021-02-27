@@ -7,6 +7,10 @@ Frame {
   id: panel
 
   property bool heaterReady: false
+  onHeaterReadyChanged: {
+    console.log("READY " + heaterReady);
+  }
+
   signal powerPressed()
   signal powerToggled(bool on)
 
@@ -35,12 +39,12 @@ Frame {
             target: powerBtn
             checkable: true
             onClicked: {}
-            onToggled: powerToggled(powerBtn.checked);
+            onCheckedChanged: oven.onPowerBtnToggled(checked)
           }
         }
       ]
 //      onClicked: powerPressed(powerBtn.checked);
-      onClicked: panel.clicked(btn_Power)
+      onClicked: if(!checkable) oven.onPowerBtnCLicked()
 
 
     }
@@ -49,7 +53,7 @@ Frame {
       iconDir: "imgs/Button/Nav/Oven"
     }
     SideButton {
-      onClicked: panel.clicked(btn_CookBook)
+      onClicked: oven.onCookBookBtnCLicked()
       iconDir: "imgs/Button/Nav/CookBook"
     }
     SideButton {

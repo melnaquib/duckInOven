@@ -1,18 +1,27 @@
 #include "mockheater.h"
-#include "config.h"
+#include "vendor.h"
 #include <QPropertyAnimation>
+#include <QSettings>
 #include <QDebug>
 
-MockHeater::MockHeater(QObject *parent) : QObject(parent),
-  _tmpr(CFG_ROOM_TMPR),
-  _target(CFG_ROOM_TMPR),
+MockHeater::MockHeater(QSettings &settings, QObject *parent) : HeaterIFace(parent),
+  _MIN_DIFF(settings.value("MocHeater/minDiff").toFloat()),
+  _ROOM_TMPR(settings.value("roomTmpr").toFloat()),
+  _tmpr(_ROOM_TMPR), _target(_ROOM_TMPR),
   _running(false),
   _heatAnim(new QPropertyAnimation(this, "tmpr", this)),
   _coolAnim(new QPropertyAnimation(this, "tmpr", this)) {
-  _heatAnim->setDuration(600000 / CFG_MOCK_TIME_FACTOR);
+
+  QSettings defaultSettings(":/settings/defaultSettings.ini", QSettings::IniFormat);
+
+  const qreal TIME_FACTOR = settings.value("MocHeater/timeFactor").toInt();
+  _heatAnim->setDuration(600000 / TIME_FACTOR);
   _heatAnim->setEasingCurve(QEasingCurve::OutBounce);
-  _coolAnim->setDuration(1200000 / CFG_MOCK_TIME_FACTOR);
+  _coolAnim->setDuration(1200000 / TIME_FACTOR);
   _coolAnim->setEasingCurve(QEasingCurve::InQuad);
+
+//  setTarget(350);
+
 }
 
 qreal MockHeater::tmpr() const {
@@ -41,8 +50,8 @@ void MockHeater::setRunning(bool arunning) {
 }
 
 void MockHeater::animHeater() {
-  qreal toTmpr = isRunning() ? target() : CFG_ROOM_TMPR;
-  if(qAbs(tmpr() - toTmpr) < CFG_MOCK_HEAT_MIN_DIFF)
+  qreal toTmpr = isRunning() ? target() : _ROOM_TMPR;
+  if(qAbs(tmpr() - toTmpr) < _MIN_DIFF)
     return;
   if(toTmpr > tmpr()) {
     _coolAnim->stop();

@@ -8,12 +8,16 @@ Page {
   Material.background: "#2f2f2f"
 
   property string typed: "0000"
+  property int typeIndex: 3
+  onTypeIndexChanged: typeIndex %= typed.length
   readonly property int duration: 60 *( parseInt(typed.slice(-2)) +
                                        parseInt(typed.slice(0, 2)) * 60 )
 
   function pushDigit(digit) {
-    typed = typed.slice (1, 4) + digit;
+    typed = typed.slice(0, typeIndex) +
+        digit + typed.slice(typeIndex - typed.length);
     console.log(typed);
+    typeIndex = (typeIndex ? typeIndex : typed.length) - 1;
   }
 
   ColumnLayout {

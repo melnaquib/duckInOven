@@ -7,8 +7,6 @@ import QtQuick.Controls.Material 2.3
 Page {
   id: runninScreen
 
-  property alias light: cameraPreview.light
-
   signal done()
 
 //  onDone: {
@@ -24,6 +22,12 @@ Page {
 
   property int tmpr: 0
   property real time: 0
+  property real totalTime: 0
+
+  function start() {
+    time = totalTime;
+    timer.running = true;
+  }
 
   SwipeView {
     id: swipeView
@@ -49,7 +53,7 @@ Page {
 
           }
           Label {
-            id: timer
+            id: timerLabel
             Layout.alignment: Qt.AlignRight
 
             readonly property int totalMinutes: Math.ceil(time / 60.0)
@@ -61,7 +65,8 @@ Page {
             id: progress
             Layout.columnSpan: 2
             Layout.fillWidth: true
-      //      value:
+//            value: time / totalTime
+            value: oven.progress
           }
         }
       }
@@ -76,13 +81,14 @@ Page {
       }
     }
     Timer {
-      running: runninScreen.time > 0
+      id: timer
       interval: 1000
       onTriggered: {
         var remain = runninScreen.time - cfg_MOCK_TIME_FACTOR * interval / 1000;
         if(remain <= 1) {
           runninScreen.time = 0;
           runninScreen.done();
+          timer.running = false;
         } else {
           runninScreen.time = remain;
         }

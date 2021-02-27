@@ -1,0 +1,14 @@
+*TODO*
+
+For Code;
+1- separate ui into .ui.qml files to contain elements and there layout/arrangements
+2- use QSettings, use header files only for constants
+3- use an FSM to manage user interaction; for example using power button to navigate to next creen, cancel, turn heater on and off, be checkable as needed, etc.
+4- add build config for local debugging that loads from filesystem and not resources
+5- have a "retransalteUi()" to "hot" language switch without reload
+6- preferably separate ui process from hw control processes to be more resilient to HW crashes, since no realtime requirements exist
+7- db to store data locally,  use db migrations code to manage db upgrades
+8- a code to check for and manage updates
+9- handle cases like HW failure, alarms
+10- for me in manual settings UI I'd use to big knowbs/dials in the same screen for time and tempterature, withou the need to slide to another panel, the timer
+11- catch more categorized logs
